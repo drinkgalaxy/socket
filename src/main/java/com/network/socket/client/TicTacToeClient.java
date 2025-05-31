@@ -13,18 +13,20 @@ public class TicTacToeClient extends JFrame {
 	private Socket socket;
 	private BufferedReader in;
 	private PrintWriter out;
-	private char myMark;
-	private boolean myTurn;
-	private JButton[][] buttons = new JButton[3][3];
-	private JLabel statusLabel = new JLabel("서버에 연결중...");
+	private char myMark; // 자신이 두는 기호 (X or O) 저장
+	private boolean myTurn; // 자신의 차례 여부 표시
+	private JButton[][] buttons = new JButton[3][3]; // 틱택토 판에 대응되는 버튼 배열, 사용자 클릭 시 움직임을 서버에 전송
+	private JLabel statusLabel = new JLabel("서버에 연결중..."); // 창 하단에 메시지 표시
 
 	public TicTacToeClient(String addr) throws IOException {
-		socket = new Socket(addr, 5000);
-		in     = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-		out    = new PrintWriter(socket.getOutputStream(), true);
+		socket = new Socket(addr, 5000); // 지정된 서버 주소와 포트 5000 으로 TCP 연결 시도
+		in = new BufferedReader(new InputStreamReader(socket.getInputStream())); // 서버의 텍스트 읽어옴
+		out = new PrintWriter(socket.getOutputStream(), true); // 서버로 문자열을 보냄
 
 		initGUI();
 		listenServer();
+
+		// 서버 연결 및 초기화
 	}
 
 	private void initGUI() {
@@ -42,9 +44,10 @@ public class TicTacToeClient extends JFrame {
 				b.addActionListener(e -> {
 					if (!myTurn) {
 						JOptionPane.showMessageDialog(this, "상대방의 차례입니다.");
-					} else if (!b.getText().equals("")) {
-						// do nothing
+					} else if (!b.getText().isEmpty()) {
+						statusLabel.setText("이미 선택된 칸입니다.");
 					} else {
+						// 선택한 정보를 MOVE:행,열 형태로 서버에 전송함
 						out.println("MOVE:" + r + "," + c);
 					}
 				});
@@ -60,15 +63,15 @@ public class TicTacToeClient extends JFrame {
 	}
 
 	private void listenServer() {
-		new Thread(() -> {
+		new Thread(() -> { // 서버에서 오는 메시지를 처리하는 로직은 별도의 스레드 안에서 수행
 			try {
 				String line;
 				while ((line = in.readLine()) != null) {
-					String cmd = line.split(":", 2)[0];
-					switch (cmd) {
+					String command = line.split(":", 2)[0]; // 서버에서 메시지를 받아온다.
+					switch (command) {
 						case "ASSIGN":
 							myMark = line.charAt(line.indexOf(":")+1);
-							statusLabel.setText("당신의 말은 " + myMark +
+							statusLabel.setText("당신의 말은 "+ myMark +
 								" 입니다. 상대방의 접속을 기다리는 중...");
 							break;
 						case "YOUR_TURN":
@@ -116,7 +119,9 @@ public class TicTacToeClient extends JFrame {
 							return;
 						case "OPPONENT_DISCONNECTED":
 							JOptionPane.showMessageDialog(this, "상대방이 게임을 종료했습니다.");
-							try { socket.close(); } catch (IOException ignored) {}
+							try {
+								socket.close();
+							} catch (IOException ignored) {}
 							dispose();
 							return;
 					}
