@@ -106,7 +106,7 @@ public class TicTacToeServer {
 				}
 			}
 		} catch (IOException e) {
-			// 소켓 끊김: 상대방 강제 종료, 단 이미 종료 플로우라면 생략
+			// 소켓 끊김: 상대방 강제 종료, 이때 정상적인 종료가 아닐 경우!!
 			if (!terminationInProgress) {
 				getOtherOut(player).println("OPPONENT_DISCONNECTED");
 			}
@@ -117,9 +117,7 @@ public class TicTacToeServer {
 		if (awaitingRestart) return;
 		String[] p = line.substring(5).split(",");
 		int r = Integer.parseInt(p[0]), c = Integer.parseInt(p[1]);
-		if (player != currentPlayer) {
-			getOut(player).println("MESSAGE:상대방의 차례입니다.");
-		} else if (!isValid(r, c)) {
+		if (!isValid(r, c)) {
 			getOut(player).println("MESSAGE:잘못된 위치입니다."); // 게임판 초과하면 에러, 이미 놓은 곳에 놓으면 에러
 		} else {
 			board[r][c] = player;

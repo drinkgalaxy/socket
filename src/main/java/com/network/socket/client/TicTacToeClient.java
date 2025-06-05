@@ -45,7 +45,7 @@ public class TicTacToeClient extends JFrame {
 					if (!myTurn) {
 						JOptionPane.showMessageDialog(this, "상대방의 차례입니다.");
 					} else if (!b.getText().isEmpty()) {
-						statusLabel.setText("이미 선택된 칸입니다.");
+						JOptionPane.showMessageDialog(this, "이미 선택된 칸입니다.");
 					} else {
 						// 선택한 정보를 MOVE:행,열 형태로 서버에 전송함
 						out.println("MOVE:" + r + "," + c);
