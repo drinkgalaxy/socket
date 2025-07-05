@@ -1,7 +1,7 @@
 ### 🎮 틱택토 게임 개발
 네트워크 프로그래밍 전공 수업 발표 자료
 
----
+
 
 ### 📌 주제 설명  
 TCP 소켓 기반으로 제작된 틱택토(Tic-Tac-Toe) 게임으로, 두 명의 사용자가 실시간으로 접속하여 턴을 주고받으며 게임을 진행할 수 있도록 설계 
@@ -13,13 +13,13 @@ GUI는 Java Swing을 이용해 구현
 ### 🛠️ 사용 기술  
 Java, Java ServerSocket, Socket, Java Swing
 
----
+
 
 ### 🔗 프로젝트의 TCP 소켓 통신 구조  
 
 <img src="https://github.com/user-attachments/assets/192a5468-a6a8-4a84-955e-31a1d70c936f" width="500"/>
 
----
+
 
 ### ⚙️ 주요 기능 동작 원리 설명  
 
@@ -43,7 +43,7 @@ Java, Java ServerSocket, Socket, Java Swing
 
 <img src="https://github.com/user-attachments/assets/3e7517e0-a45a-4731-94c6-ab0fef67573d" width="500"/>
 
----
+
 
 ### 🚫 에러 처리  
 
