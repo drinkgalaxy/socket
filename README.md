@@ -8,8 +8,6 @@ TCP 소켓 기반으로 제작된 틱택토(Tic-Tac-Toe) 게임으로, 두 명�
 
 <img src="https://github.com/user-attachments/assets/4cf712bb-d180-4c42-8522-f13145876712" width="500"/>
 
----
-
 ### 🛠️ 사용 기술  
 **Java**, **Java ServerSocket**, **Socket**, **Java Swing**
 
