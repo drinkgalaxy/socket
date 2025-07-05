@@ -62,5 +62,3 @@ TCP 소켓 기반으로 제작된 틱택토(Tic-Tac-Toe) 게임으로, 두 명�
 
 <img src="https://github.com/user-attachments/assets/43fcc9df-1ee5-4078-981b-bc6ef37af93b" width="500"/>
 <img src="https://github.com/user-attachments/assets/b44771d7-5713-4891-8cba-2907573249cc" width="500"/>
-
----
