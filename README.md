@@ -13,23 +13,23 @@ Java, Java ServerSocket, Socket, Java Swing
 ### 주요 기능 동작 원리 설명
 1) 클라이언트 접속 후 게임 시작
 ![image](https://github.com/user-attachments/assets/755d25a1-7634-404a-8e59-5581d082f3fd)
-
+<br>
 2) 말의 위치 선택
 ![image](https://github.com/user-attachments/assets/9863e7b9-8718-40f5-97cc-614d3938e12d)
-
+<br>
 3) 말의 위치를 화면에 출력하고 다음 턴 이동
 ![image](https://github.com/user-attachments/assets/996764f9-59ad-4df2-a1a9-18333de74026)
-
+<br>
 4) 한 턴의 결과 화면
 ![image](https://github.com/user-attachments/assets/3e7517e0-a45a-4731-94c6-ab0fef67573d)
 
 ### 에러 처리
 1) 유효한 말인지 검증
 ![image](https://github.com/user-attachments/assets/4059e66c-eb4e-4c8b-baba-d1faa550247a)
-
+<br>
 2) 게임 도중 상대방의 연결이 끊어짐
 ![image](https://github.com/user-attachments/assets/cf448e18-6002-4830-92bb-85fad58fab1d)
-
+<br>
 3) 게임 종료 후 재시작
 ![image](https://github.com/user-attachments/assets/43fcc9df-1ee5-4078-981b-bc6ef37af93b)
 ![image](https://github.com/user-attachments/assets/b44771d7-5713-4891-8cba-2907573249cc)
