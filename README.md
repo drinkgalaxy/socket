@@ -39,7 +39,7 @@ TCP 소켓 기반으로 제작된 틱택토(Tic-Tac-Toe) 게임으로, 두 명�
 <img src="https://github.com/user-attachments/assets/996764f9-59ad-4df2-a1a9-18333de74026" width="500"/>
 
 #### 4) 한 턴의 결과 화면  
-각 턴 이후 현재 게임 판의 상태를 확인할 수 있습니다.
+각 턴 이후 게임 판의 실제 결과 화면입니다.
 
 <img src="https://github.com/user-attachments/assets/3e7517e0-a45a-4731-94c6-ab0fef67573d" width="500"/>
 
